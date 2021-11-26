@@ -19,4 +19,4 @@ jobs:
           git-user-email: rialcantara21@gmail.com
           git-user-name: Rodrick Alcantara
           github-token: ${{ secrets.PAT }}
-          output-file: 'CHANGELOG.md'
+          output-file: false
