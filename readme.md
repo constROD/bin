@@ -4,8 +4,10 @@ A custom CLI for creating custom template for different kinds of application
 
 ## List of app supported:
 
-- react
 - node
+- react
+- next
+- gatsby
 
 ## How to use:
 
@@ -15,7 +17,7 @@ Install
   npx @constrod/create-app
 
   Enter your folder name: <folder-name>
-  Choose your app (react | node): <app-name>
+  Choose your app: <app-name>
 ```
 
 Go to the project directory

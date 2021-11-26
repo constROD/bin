@@ -1,0 +1,22 @@
+name: Github Release
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          token: ${{ secrets.PAT }}
+
+      - name: Conventional Changelog
+        uses: TriPSs/conventional-changelog-action@master
+        with:
+          git-message: 'chore(release): {version}'
+          git-user-email: rialcantara21@gmail.com
+          git-user-name: Rodrick Alcantara
+          github-token: ${{ secrets.PAT }}
+          output-file: 'CHANGELOG.md'
