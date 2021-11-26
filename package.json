@@ -1,6 +1,6 @@
 {
   "name": "@constrod/create-app",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": "./bin/cli.js",
@@ -30,8 +30,7 @@
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
-    "husky": "^6.0.0",
-    "lint-staged": "^12.1.2"
+    "husky": "^6.0.0"
   },
   "dependencies": {}
 }

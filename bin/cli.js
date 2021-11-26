@@ -18,19 +18,37 @@ const runCommand = (command) => {
   return true;
 };
 
-const repoName = process.argv[2];
-const gitCheckoutCommand = `git clone --depth 1 https://github.com/constrod/template-node-typescript ${repoName}`;
-const installDependenciesCommand = `cd ${repoName} && yarn`;
+rl.question('Enter your folder name: ', function (folderName) {
+  if (!folderName) {
+    console.log('Please enter your folder name.');
+    process.exit(1);
+  }
 
-rl.question('Create new application');
+  rl.question('Choose your app (react | node): ', function (appName) {
+    if (!appName) {
+      console.log('Please enter your desired application.');
+      process.exit(1);
+    }
 
-console.log(`Cloning the repository with name ${repoName}`);
-// const isCheckedOut = runCommand(gitCheckoutCommand);
-// if (!isCheckedOut) process.exit(-1);
+    let cloneCommand = '';
 
-console.log(`Installing dependencies for ${repoName}`);
-// const isInstalled = runCommand(installDependenciesCommand);
-// if (!isInstalled) process.exit(-1);
+    if (appName === 'node')
+      cloneCommand = `git clone --depth 1 https://github.com/constrod/template-node-typescript ${folderName}`;
+    if (appName === 'react')
+      cloneCommand = `git clone --depth 1 https://github.com/constrod/template-react-typescript ${folderName}`;
 
-console.log('Congratulations! You are ready. Follow the following commands to start');
-console.log(`cd ${repoName} && yarn dev`);
+    const installDependenciesCommand = `cd ${folderName} && yarn`;
+
+    console.log(`Cloning the repository in ${folderName}`);
+    const isCloned = runCommand(cloneCommand);
+    if (!isCloned) process.exit(-1);
+
+    console.log(`Installing dependencies for ${folderName}`);
+    const isInstalled = runCommand(installDependenciesCommand);
+    if (!isInstalled) process.exit(-1);
+
+    console.log('Congratulations! You are ready. Follow the following commands to start');
+    console.log(`cd ${folderName} && yarn dev`);
+    rl.close();
+  });
+});
