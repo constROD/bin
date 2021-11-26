@@ -1,6 +1,6 @@
 {
   "name": "@constrod/create-app",
-  "version": "1.0.6",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": "./bin/cli.js",
@@ -21,7 +21,7 @@
       "url": "https://github.com/constROD"
     }
   ],
-  "description": "Custom template for different kinds of application",
+  "description": "Custom bin for creating custom template for different kinds of application",
   "author": "Rodrick Alcantara <rialcantara21@gmail.com>",
   "license": "MIT",
   "scripts": {
