@@ -2,6 +2,11 @@
 
 A custom CLI for creating custom template for different kinds of application
 
+## List of app supported:
+
+- react
+- node
+
 ## How to use:
 
 Install
