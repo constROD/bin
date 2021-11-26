@@ -24,7 +24,9 @@ rl.question('Enter your folder name: ', function (folderName) {
     process.exit(1);
   }
 
-  rl.question('Choose your app (react | node): ', function (appName) {
+  console.log('List of app supported: react | node | next | gatsby');
+
+  rl.question('Choose your app: ', function (appName) {
     if (!appName) {
       console.log('Please enter your desired application.');
       process.exit(1);
@@ -36,6 +38,11 @@ rl.question('Enter your folder name: ', function (folderName) {
       cloneCommand = `git clone --depth 1 https://github.com/constrod/template-node-typescript ${folderName}`;
     if (appName === 'react')
       cloneCommand = `git clone --depth 1 https://github.com/constrod/template-react-typescript ${folderName}`;
+
+    if (!cloneCommand) {
+      console.log(`Failed to create app. App type ${appName} is invalid`);
+      process.exit(1);
+    }
 
     const installDependenciesCommand = `cd ${folderName} && yarn`;
 
