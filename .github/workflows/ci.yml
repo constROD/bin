@@ -13,11 +13,21 @@ jobs:
           ref: master
 
       - id: changelog
-      - name: Conventional Changelog
+        name: Conventional Changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
           git-message: 'chore(release): {version} [no ci]'
-          git-user-email: rialcantara21@gmail.com
+          git-user-email: rialcantara@gmail.com
           git-user-name: Rodrick Alcantara
           github-token: ${{ secrets.PAT }}
           output-file: 'false'
+
+      - name: Create Github Release
+        uses: actions/create-release@v1
+        if: ${{ steps.changelog.outputs.skipped == 'false' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        with:
+          tag_name: ${{ steps.changelog.outputs.tag }}
+          release_name: ${{ steps.changelog.outputs.tag }}
+          body: ${{ steps.changelog.outputs.clean_changelog }}
