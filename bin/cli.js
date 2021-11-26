@@ -24,7 +24,7 @@ rl.question('Enter your folder name: ', function (folderName) {
     process.exit(1);
   }
 
-  console.log('List of app supported: react | node | next | gatsby');
+  console.log('List of app supported: node | react | next | gatsby');
 
   rl.question('Choose your app: ', function (appName) {
     if (!appName) {
@@ -38,6 +38,10 @@ rl.question('Enter your folder name: ', function (folderName) {
       cloneCommand = `git clone --depth 1 https://github.com/constrod/template-node-typescript ${folderName}`;
     if (appName === 'react')
       cloneCommand = `git clone --depth 1 https://github.com/constrod/template-react-typescript ${folderName}`;
+    if (appName === 'next')
+      cloneCommand = `git clone --depth 1 https://github.com/constrod/template-next-typescript ${folderName}`;
+    if (appName === 'gatsby')
+      cloneCommand = `git clone --depth 1 https://github.com/constrod/template-gatsby-typescript ${folderName}`;
 
     if (!cloneCommand) {
       console.log(`Failed to create app. App type ${appName} is invalid`);
