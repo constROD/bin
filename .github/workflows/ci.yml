@@ -12,11 +12,12 @@ jobs:
         with:
           ref: master
 
+      - id: changelog
       - name: Conventional Changelog
         uses: TriPSs/conventional-changelog-action@v3
         with:
-          git-message: 'chore(release): {version}'
+          git-message: 'chore(release): {version} [no ci]'
           git-user-email: rialcantara21@gmail.com
           git-user-name: Rodrick Alcantara
           github-token: ${{ secrets.PAT }}
-          output-file: ''
+          output-file: 'false'
