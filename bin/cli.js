@@ -24,7 +24,13 @@ rl.question('Enter your folder name: ', function (folderName) {
     process.exit(1);
   }
 
-  console.log('List of app supported: node | react | next | gatsby');
+  console.log(`
+  List of app supported: 
+  - node
+  - react
+  - next (not yet available)
+  - gatsby (not yet available)
+  `);
 
   rl.question('Choose your app: ', function (appName) {
     if (!appName) {
