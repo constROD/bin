@@ -18,9 +18,9 @@ const runCommand = (command) => {
   return true;
 };
 
-rl.question('Enter your folder name: ', function (folderName) {
+rl.question('[1]: Enter your folder name: ', function (folderName) {
   if (!folderName) {
-    console.log('Please enter your folder name.');
+    console.log('[ERROR]: You must provide a folder name.');
     process.exit(1);
   }
 
@@ -32,9 +32,9 @@ rl.question('Enter your folder name: ', function (folderName) {
   - gatsby (not yet available)
   `);
 
-  rl.question('Choose your app: ', function (appName) {
+  rl.question('[2]: Choose your app: ', function (appName) {
     if (!appName) {
-      console.log('Please enter your desired application.');
+      console.log('[ERROR]: You must provide only the supported app.');
       process.exit(1);
     }
 
@@ -56,16 +56,23 @@ rl.question('Enter your folder name: ', function (folderName) {
 
     const installDependenciesCommand = `cd ${folderName} && yarn`;
 
-    console.log(`Cloning the repository in ${folderName}`);
+    console.log(`[START]: Cloning the repository in ${folderName}`);
     const isCloned = runCommand(cloneCommand);
     if (!isCloned) process.exit(-1);
+    console.log(`[DONE]: Cloning the repository in ${folderName}`);
 
-    console.log(`Installing dependencies for ${folderName}`);
+    console.log(`[START]: Installing dependencies for ${folderName}`);
     const isInstalled = runCommand(installDependenciesCommand);
     if (!isInstalled) process.exit(-1);
+    console.log(`[DONE]: Installing dependencies for ${folderName}`);
 
-    console.log('Congratulations! You are ready. Follow the following commands to start');
-    console.log(`cd ${folderName} && yarn dev`);
+    console.log(`
+    Congratulations! You are ready. Follow the following commands to start: 
+
+    cd ${folderName} && yarn dev
+
+    Happy hacking!
+    `);
     rl.close();
   });
 });
