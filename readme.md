@@ -6,8 +6,8 @@ A custom CLI for creating custom template for different kinds of application
 
 - node
 - react
-- next
-- gatsby
+- next (not yet available)
+- gatsby (not yet available)
 
 ## How to use:
 
