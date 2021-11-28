@@ -16,8 +16,15 @@ Install
 ```bash
   npx @constrod/create-app
 
-  Enter your folder name: <folder-name>
-  Choose your app: <app-name>
+  [1]: Enter your folder name: <folder-name>
+
+    List of app supported:
+    - node
+    - react
+    - next (not yet available)
+    - gatsby (not yet available)
+
+  [2]: Choose your app: <app-name>
 ```
 
 Go to the project directory

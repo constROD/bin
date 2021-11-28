@@ -32,7 +32,7 @@ rl.question('[1]: Enter your folder name: ', function (folderName) {
   - gatsby (not yet available)
   `);
 
-  rl.question('[2]: Choose your app: ', function (appName) {
+  rl.question('[2]: Choose your app: \n', function (appName) {
     if (!appName) {
       console.log('[ERROR]: You must provide only the supported app.');
       process.exit(1);
@@ -56,15 +56,15 @@ rl.question('[1]: Enter your folder name: ', function (folderName) {
 
     const installDependenciesCommand = `cd ${folderName} && yarn`;
 
-    console.log(`[START]: Cloning the repository in ${folderName}`);
+    console.log(`[START]: Cloning the repository in ${folderName} \n`);
     const isCloned = runCommand(cloneCommand);
     if (!isCloned) process.exit(-1);
-    console.log(`[DONE]: Cloning the repository in ${folderName}`);
+    console.log(`\n [DONE]: Cloning the repository in ${folderName}`);
 
-    console.log(`[START]: Installing dependencies for ${folderName}`);
+    console.log(`[START]: Installing dependencies for ${folderName} \n`);
     const isInstalled = runCommand(installDependenciesCommand);
     if (!isInstalled) process.exit(-1);
-    console.log(`[DONE]: Installing dependencies for ${folderName}`);
+    console.log(`\n [DONE]: Installing dependencies for ${folderName}`);
 
     console.log(`
     Congratulations! You are ready. Follow the following commands to start: 
