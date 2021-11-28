@@ -12,7 +12,7 @@ const runCommand = (command) => {
   try {
     execSync(`${command}`, { stdio: 'inherit' });
   } catch (error) {
-    console.error(`Failed to execute ${command}`, error);
+    console.error(`[ERROR]: Failed to execute ${command}`, error);
     return false;
   }
   return true;
@@ -32,7 +32,7 @@ rl.question('[1]: Enter your folder name: ', function (folderName) {
   - gatsby (not yet available)
   `);
 
-  rl.question('[2]: Choose your app: \n', function (appName) {
+  rl.question('[2]: Choose your app: ', function (appName) {
     if (!appName) {
       console.log('[ERROR]: You must provide only the supported app.');
       process.exit(1);
@@ -50,26 +50,27 @@ rl.question('[1]: Enter your folder name: ', function (folderName) {
       cloneCommand = `git clone --depth 1 https://github.com/constrod/template-gatsby-typescript ${folderName}`;
 
     if (!cloneCommand) {
-      console.log(`Failed to create app. App type ${appName} is invalid`);
+      console.log(`[ERROR]: Failed to create app. App type ${appName} is invalid`);
       process.exit(1);
     }
 
     const installDependenciesCommand = `cd ${folderName} && yarn`;
 
-    console.log(`[START]: Cloning the repository in ${folderName} \n`);
+    console.log(`\n[START]: Cloning the repository in ${folderName} \n`);
     const isCloned = runCommand(cloneCommand);
     if (!isCloned) process.exit(-1);
-    console.log(`\n [DONE]: Cloning the repository in ${folderName}`);
+    console.log(`\n[DONE]: Cloning the repository in ${folderName}`);
 
     console.log(`[START]: Installing dependencies for ${folderName} \n`);
     const isInstalled = runCommand(installDependenciesCommand);
     if (!isInstalled) process.exit(-1);
-    console.log(`\n [DONE]: Installing dependencies for ${folderName}`);
+    console.log(`\n[DONE]: Installing dependencies for ${folderName}`);
 
     console.log(`
-    Congratulations! You are now ready to build an amazing app.
+    Congratulations! 
+    You are now ready to build an amazing app.
+
     Follow the following commands to start: 
-    
     cd ${folderName} && yarn dev
 
     Happy hacking!
