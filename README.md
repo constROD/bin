@@ -7,7 +7,7 @@ A custom CLI for creating custom template for different kinds of application
 - node
 - react
 - next (not yet available)
-- gatsby (not yet available)
+- gatsby
 
 ## How to use:
 
@@ -22,7 +22,7 @@ Install
     - node
     - react
     - next (not yet available)
-    - gatsby (not yet available)
+    - gatsby
 
   [2]: Choose your app: <app-name>
 ```
