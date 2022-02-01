@@ -1,12 +1,7 @@
 {
   "name": "@constrod/create-app",
   "version": "1.2.9",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "bin": "bin/cli.js",
-  "files": [
-    "dist"
-  ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },

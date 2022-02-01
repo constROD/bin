@@ -29,7 +29,7 @@ rl.question('[1]: Enter your folder name: ', function (folderName) {
   - node
   - react
   - next (not yet available)
-  - gatsby (not yet available)
+  - gatsby
   `);
 
   rl.question('[2]: Choose your app: ', function (appName) {
