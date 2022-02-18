@@ -14,9 +14,11 @@ A custom CLI for creating custom template for different kinds of application
 Install
 
 ```bash
-  npx @constrod/create-app
+  $ npx @constrod/create-app
+```
 
-  [1]: Enter your folder name: <folder-name>
+```bash
+  [1]: Enter your folder name: {folder-name}
 
     List of app supported:
     - node
@@ -24,19 +26,19 @@ Install
     - next (not yet available)
     - gatsby
 
-  [2]: Choose your app: <app-name>
+  [2]: Choose your app: {app-name}
 ```
 
 Go to the project directory
 
 ```bash
-  cd <folder-name>
+  $ cd {folder-name}
 ```
 
 Start the application
 
 ```bash
-  yarn dev
+  $ yarn dev
 ```
 
 ## Authors
