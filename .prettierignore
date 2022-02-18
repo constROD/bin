@@ -2,6 +2,7 @@
 /node_modules
 
 # Configs
+/commitlint.config.js
 
 # Caches
 /.eslintcache
@@ -18,7 +19,6 @@
 /.env
 /.env.*
 /.npmrc
-/package-lock.json
 
 # Logs
 /*-error.log

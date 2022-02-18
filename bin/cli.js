@@ -8,7 +8,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const runCommand = (command) => {
+const runCommand = command => {
   try {
     execSync(`${command}`, { stdio: 'inherit' });
   } catch (error) {
