@@ -8,17 +8,17 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Conventional Changelog
         uses: TriPSs/conventional-changelog-action@v3
         id: changelog
         with:
-          git-message: "chore(release): {version} [no ci]"
+          git-message: 'chore(release): {version} [no ci]'
           git-user-email: rialcantara21@gmail.com
           git-user-name: Rodrick Alcantara
           github-token: ${{ secrets.PAT }}
-          output-file: "false"
+          output-file: 'false'
 
       - name: Create New Release
         uses: actions/create-release@v1
