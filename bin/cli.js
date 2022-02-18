@@ -68,7 +68,7 @@ rl.question('[1]: Enter your folder name: ', function (folderName) {
 
     console.log(`
     Congratulations! 
-    You are now ready to build an amazing app.
+    You are now ready to build an amazing app. 
 
     Follow the following commands to start: 
     cd ${folderName} && yarn dev
