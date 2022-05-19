@@ -1,6 +1,6 @@
 # @constrod/create-app
 
-A custom CLI for creating custom template for different kinds of application
+A custom CLI that provides a template to different kind of application.
 
 ## List of app supported:
 
@@ -27,7 +27,7 @@ Install
   $ npx @constrod/create-app
 ```
 
-After you finish the installation. Go to the project directory.
+After the installation. Go to the project directory.
 
 ```bash
   $ cd {folder-name}

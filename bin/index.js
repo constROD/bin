@@ -22,7 +22,7 @@ const runCommand = command => {
   try {
     execSync(`${command}`, { stdio: 'inherit' });
   } catch (error) {
-    logger({ type: 'error', message: `Unable to run the command: ${command}` });
+    logger({ type: 'error', message: 'Repository not found.' });
     return false;
   }
   return true;
@@ -91,15 +91,14 @@ const run = async () => {
 
   logger({ type: 'success', message: 'Installation completed.' });
 
-  console.log(`
-    Congratulations!
-    You are now ready to build your amazing app.
-
-    Follow the following commands to start:
-    ${chalk.blue(`cd ${folderOrAppName} && yarn dev`)}
-
-    Happy hacking!
-  `);
+  console.log('\n');
+  console.log(chalk.green('Congratulations!'));
+  console.log(chalk.white('You are now ready to build your amazing app.!'));
+  console.log();
+  console.log(chalk.white('Follow the following commands to start:'));
+  console.log(chalk.blue('cd test && yarn dev'));
+  console.log();
+  console.log(chalk.white('Happy hacking!'));
 };
 
 run();
