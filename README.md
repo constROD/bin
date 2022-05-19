@@ -5,9 +5,19 @@ A custom CLI for creating custom template for different kinds of application
 ## List of app supported:
 
 - node
+- node-ts
 - react
-- next (not yet available)
+- react-ts
+- next
+- next-ts
 - gatsby
+- gatsby-ts
+- vue
+- vue-ts
+- nuxt
+- nuxt-ts
+- svelte-kit
+- svelte-kit-ts
 
 ## How to use:
 
@@ -17,19 +27,7 @@ Install
   $ npx @constrod/create-app
 ```
 
-```bash
-  [1]: Enter your folder name: {folder-name}
-
-    List of app supported:
-    - node
-    - react
-    - next (not yet available)
-    - gatsby
-
-  [2]: Choose your app: {app-name}
-```
-
-Go to the project directory
+After you finish the installation. Go to the project directory.
 
 ```bash
   $ cd {folder-name}
