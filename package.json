@@ -1,6 +1,6 @@
 {
   "name": "@constrod/create-app",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "bin": "./bin/index.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
