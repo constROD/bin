@@ -92,13 +92,13 @@ const run = async () => {
   logger({ type: 'success', message: 'Installation completed.' });
 
   console.log(`
-      Congratulations!
-      You are now ready to build your amazing app.
+    Congratulations!
+    You are now ready to build your amazing app.
 
-      Follow the following commands to start:
-      ${chalk.blue(`cd ${folderOrAppName} && yarn dev`)}
+    Follow the following commands to start:
+    ${chalk.blue(`cd ${folderOrAppName} && yarn dev`)}
 
-      Happy hacking!
+    Happy hacking!
   `);
 };
 
