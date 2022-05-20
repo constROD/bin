@@ -4,19 +4,12 @@ A custom CLI that provides a template to different kind of application.
 
 ## List of app supported:
 
-- node
 - node-ts
-- react
 - react-ts
-- next
 - next-ts
-- gatsby
 - gatsby-ts
-- vue
 - vue-ts
-- nuxt
 - nuxt-ts
-- svelte-kit
 - svelte-kit-ts
 
 ## How to use:
