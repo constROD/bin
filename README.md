@@ -6,11 +6,11 @@ A custom CLI that provides a template to different kind of application.
 
 - node-ts
 - react-ts
-- next-ts
+- next-ts (Temporary not available)
 - gatsby-ts
-- vue-ts
-- nuxt-ts
-- svelte-kit-ts
+- vue-ts (Temporary not available)
+- nuxt-ts (Temporary not available)
+- svelte-kit-ts (Temporary not available)
 
 ## How to use:
 

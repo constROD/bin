@@ -50,11 +50,11 @@ const askAppType = () =>
       choices: [
         'node-ts',
         'react-ts',
-        'next-ts',
+        'next-ts (Temporary not available)',
         'gatsby-ts',
-        'vue-ts',
-        'nuxt-ts',
-        'svelte-kit-ts',
+        'vue-ts (Temporary not available)',
+        'nuxt-ts (Temporary not available)',
+        'svelte-kit-ts (Temporary not available)',
       ],
     },
   ]);
