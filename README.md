@@ -1,6 +1,6 @@
 # @constrod/create-app
 
-A custom CLI that provides a template to different kind of application.
+A custom CLI that provides a template for different kind of applications.
 
 ## List of app supported:
 
