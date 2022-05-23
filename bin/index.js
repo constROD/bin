@@ -71,7 +71,7 @@ const run = async () => {
   const { appType } = await askAppType();
 
   const cloneCommand = `git clone --depth 1 https://github.com/constrod/template-${appType} ${folderOrAppName}`;
-  const installDependenciesCommand = `cd ${folderOrAppName} && yarn`;
+  const installAndDeleteGitCommand = `cd ${folderOrAppName} && rm -rf .git`;
 
   logger({ type: 'info', message: `Start cloning the repository in ${folderOrAppName}` });
 
@@ -81,8 +81,8 @@ const run = async () => {
   logger({ type: 'success', message: 'Repository is cloned successfully.' });
   logger({ type: 'info', message: `Start installing dependencies for ${folderOrAppName}.` });
 
-  const isInstalled = runCommand(installDependenciesCommand);
-  if (!isInstalled) process.exit(-1);
+  const isInstalledAndDeletedGit = runCommand(installAndDeleteGitCommand);
+  if (!isInstalledAndDeletedGit) process.exit(-1);
 
   logger({ type: 'success', message: 'Installation completed.' });
 
@@ -91,7 +91,8 @@ const run = async () => {
   console.log(chalk.white('You are now ready to build your amazing app.!'));
   console.log();
   console.log(chalk.white('Follow the following commands to start:'));
-  console.log(chalk.blue('cd test && yarn dev'));
+  console.log(chalk.blue('cd test && yarn'));
+  console.log(chalk.blue('yarn dev'));
   console.log();
   console.log(chalk.white('Happy hacking!'));
 };
