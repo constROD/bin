@@ -20,15 +20,11 @@ Install
   $ npx @constrod/create-app
 ```
 
-After the installation. Go to the project directory.
+Go to the project directory. Install and start the application
 
 ```bash
   $ cd {folder-name}
-```
-
-Start the application
-
-```bash
+  $ yarn
   $ yarn dev
 ```
 
