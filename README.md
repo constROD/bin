@@ -6,7 +6,7 @@ A custom CLI that provides a template for different kind of applications.
 
 - node-ts
 - react-ts
-- next-ts (Temporary not available)
+- next-ts
 - gatsby-ts
 - vue-ts (Temporary not available)
 - nuxt-ts (Temporary not available)

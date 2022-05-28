@@ -12,9 +12,17 @@ clear();
 console.log(chalk.gray(figlet.textSync('constROD', { horizontalLayout: 'full' })));
 
 /* Utilities / Helpers */
+const addSpaces = text => {
+  let spaces = '';
+  const totalSpaceNeed = 10 - text.length;
+  for (let i = 1; i <= totalSpaceNeed; i++) {
+    spaces = `${spaces} `;
+  }
+  return `${spaces} - `;
+};
 const directoryChecker = filePath => fs.existsSync(filePath);
 const logger = ({ type, message }) => {
-  if (type === 'success') return console.log(chalk.green(type) + ' ' + chalk.white(message));
+  if (type === 'success') return console.log(chalk.green(type) + addSpaces + chalk.white(message));
   if (type === 'info') return console.log(chalk.blue(type) + ' ' + chalk.white(message));
   return console.log(chalk.red(type) + ' ' + chalk.white(message));
 };
@@ -50,7 +58,7 @@ const askAppType = () =>
       choices: [
         'node-ts',
         'react-ts',
-        'next-ts (Temporary not available)',
+        'next-ts',
         'gatsby-ts',
         'vue-ts (Temporary not available)',
         'nuxt-ts (Temporary not available)',
