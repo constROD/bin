@@ -100,7 +100,7 @@ const run = async () => {
 
   console.log(chalk.gray(figlet.textSync('Happy Hacking', { horizontalLayout: 'full' })));
   console.log('\n');
-  console.log(chalk.white('You are now ready to build your amazing app.!'));
+  console.log(chalk.white('You are now ready to build your amazing app.'));
   console.log('\n');
   console.log(chalk.white('Follow the following commands to start:'));
   console.log(`- ${chalk.blue(`cd ${folderOrAppName} && yarn`)}`);
