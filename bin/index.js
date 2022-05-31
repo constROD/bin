@@ -22,9 +22,11 @@ const addSpaces = text => {
 };
 const directoryChecker = filePath => fs.existsSync(filePath);
 const logger = ({ type, message }) => {
-  if (type === 'success') return console.log(chalk.green(type) + addSpaces + chalk.white(message));
-  if (type === 'info') return console.log(chalk.blue(type) + ' ' + chalk.white(message));
-  return console.log(chalk.red(type) + ' ' + chalk.white(message));
+  if (type === 'success')
+    return console.log(chalk.green(type) + addSpaces(type) + chalk.white(message));
+  if (type === 'info')
+    return console.log(chalk.blue(type) + addSpaces(type) + chalk.white(message));
+  return console.log(chalk.red(type) + addSpaces(type) + chalk.white(message));
 };
 const runCommand = command => {
   try {
@@ -99,7 +101,7 @@ const run = async () => {
   console.log(chalk.white('You are now ready to build your amazing app.!'));
   console.log();
   console.log(chalk.white('Follow the following commands to start:'));
-  console.log(chalk.blue('cd test && yarn'));
+  console.log(chalk.blue(`cd ${folderOrAppName} && yarn`));
   console.log(chalk.blue('yarn dev'));
   console.log();
   console.log(chalk.white('Happy hacking!'));
