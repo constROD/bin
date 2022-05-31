@@ -88,6 +88,8 @@ const run = async () => {
   const isCloned = runCommand(cloneCommand);
   if (!isCloned) process.exit(-1);
 
+  console.log('\n');
+
   logger({ type: 'success', message: 'Repository is cloned successfully.' });
   logger({ type: 'info', message: `Start installing dependencies for ${folderOrAppName}.` });
 
@@ -97,8 +99,9 @@ const run = async () => {
   logger({ type: 'success', message: 'Installation completed.' });
 
   console.log(chalk.gray(figlet.textSync('Happy Hacking', { horizontalLayout: 'full' })));
+  console.log('\n');
   console.log(chalk.white('You are now ready to build your amazing app.!'));
-  console.log();
+  console.log('\n');
   console.log(chalk.white('Follow the following commands to start:'));
   console.log(chalk.blue(`cd ${folderOrAppName} && yarn`));
   console.log(chalk.blue('yarn dev'));
