@@ -14,7 +14,7 @@ console.log(chalk.gray(figlet.textSync('constROD', { horizontalLayout: 'full' })
 /* Utilities / Helpers */
 const addSpaces = text => {
   let spaces = '';
-  const totalSpaceNeed = 10 - text.length;
+  const totalSpaceNeed = 7 - text.length;
   for (let i = 1; i <= totalSpaceNeed; i++) {
     spaces = `${spaces} `;
   }
@@ -96,15 +96,12 @@ const run = async () => {
 
   logger({ type: 'success', message: 'Installation completed.' });
 
-  console.log('\n');
-  console.log(chalk.green('Congratulations!'));
+  console.log(chalk.gray(figlet.textSync('Happy Hacking', { horizontalLayout: 'full' })));
   console.log(chalk.white('You are now ready to build your amazing app.!'));
   console.log();
   console.log(chalk.white('Follow the following commands to start:'));
   console.log(chalk.blue(`cd ${folderOrAppName} && yarn`));
   console.log(chalk.blue('yarn dev'));
-  console.log();
-  console.log(chalk.white('Happy hacking!'));
 };
 
 run();
